@@ -1,0 +1,2 @@
+localhost ssh_connection=local ansible_ssh_user=root
+

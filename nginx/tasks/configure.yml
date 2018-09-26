@@ -1,0 +1,8 @@
+---
+- name: copying index file and conf file to nginx
+  copy: src=files/index.html dest=/var/www/html
+
+- name: copying conf file
+  copy: src=files/nginx-sample.conf dest=/etc/nginx
+
+ 
