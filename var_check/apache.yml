@@ -1,0 +1,24 @@
+---
+
+- hosts: localhost
+  become : yes
+  gather_facts: yes 
+  tasks:
+     - name: installing apache2
+       apt: 
+          name:  "{{ web_package }}"
+       tags:
+          - install 
+     - name: starting apache2 service
+       service: 
+          name:  "{{ web_package }}"
+          state: started
+          enabled: yes  
+       tags:
+          - install 
+    
+     - name: display Memory
+       debug: 
+          msg: "the python version is {{ ansible_python_version }}"
+       tags:
+          - ajay
